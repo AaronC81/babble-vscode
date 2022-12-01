@@ -2,19 +2,46 @@
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "Babble",
 	"patterns": [
-		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#strings"
-		}
+		{ "include": "#literals" },
+		{ "include": "#keywords" },
+		{ "include": "#strings" },
+		{ "include": "#docComments" },
+		{ "include": "#comments" },
+		{ "include": "#identifiers" },
+		{ "include": "#constants" }
 	],
 	"repository": {
+		"literals": {
+			"patterns": [
+				{
+					"name": "constant.language.babble",
+					"match": "\\b(true|false|null)\\b"
+				},
+				{
+					"name": "constant.numeric.babble",
+					"match": "\\b([0-9]+)\\b"
+				}
+			]
+		},
 		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.babble",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
+			"patterns": [
+				{
+					"name": "keyword.control.babble",
+					"match": "\\b(return)\\b"
+				},
+				{
+					"name": "variable.language.babble",
+					"match": "\\b(self)\\b"
+				},
+				{
+					"name": "storage.babble",
+					"match": "\\b(impl|func|enum|struct|mixin|use)\\b"
+				},
+				{
+					"name": "storage.modifier.babble",
+					"match": "\\b(static)\\b"
+				}
+			]
 		},
 		"strings": {
 			"name": "string.quoted.double.babble",
@@ -26,6 +53,24 @@
 					"match": "\\\\."
 				}
 			]
+		},
+		"docComments": {
+			"name": "comment.block.documentation.babble",
+			"begin": "///",
+			"end": "$"
+		},
+		"comments": {
+			"name": "comment.line.double-slash.babble",
+			"begin": "//",
+			"end": "$"
+		},
+		"identifiers": {
+			"name": "entity.name.babble",
+			"match": "\\b([a-z_][a-zA-Z0-9_]*:?)"
+		},
+		"constants": {
+			"name": "entity.name.class.babble",
+			"match": "\\b([A-Z][a-zA-Z0-9_]*:?)"
 		}
 	},
 	"scopeName": "source.babble"
