@@ -1,0 +1,25 @@
+{
+  "name": "babble",
+  "displayName": "Babble",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.73.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "babble",
+      "aliases": ["Babble", "babble"],
+      "extensions": [".bbl"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "babble",
+      "scopeName": "source.babble",
+      "path": "./syntaxes/babble.tmLanguage.json"
+    }]
+  }
+}
