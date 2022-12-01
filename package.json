@@ -1,7 +1,12 @@
 {
   "name": "babble",
   "displayName": "Babble",
-  "description": "Language support for the Babble programming language",
+  "description": "Language support for Babble",
+  "publisher": "aaronc81",
+  "author": {
+    "name": "Aaron Christiansen",
+    "email": "aaronc20000@gmail.com"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/AaronC81/babble-vscode"
