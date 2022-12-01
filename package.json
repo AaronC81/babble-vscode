@@ -1,7 +1,8 @@
 {
   "name": "babble",
   "displayName": "Babble",
-  "description": "",
+  "description": "Language support for the Babble programming language",
+  "icon": "img/icon.png",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.73.0"
